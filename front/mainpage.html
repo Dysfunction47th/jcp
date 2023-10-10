@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" href="/test.css">
     <script src="/back/LoginAndLogout/logout.js"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
 
 </head>
 
@@ -48,63 +50,39 @@ window.onload = function () {
 
 
 <body>
-    <header>
-        <div class="inner">
-            <h1>VESLAB Trend</h1>
-        
-            <ul id="gnb">
-                <li><a href="#">트랜드</a></li>
-                <li><a href="#">쇼핑</a></li>
-                <li id="recommendBoard"><a href="#">추천게시판</a></li>
-            </ul>
 
-            <ul class="util">
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Help</a></li>
-                <li id="userMenu"><a href="#">User Name</a></li>
-                <li class="api-btn" onclick="logout()"><a href="#">Logout</a></li>
-                <li><a href="#">Sitemap</a></li>
-            </ul>
-        </div>
-    </header>
+  
+  <header>
+      <div class="inner">
+          <h1>VESLAB Trend</h1>
+      
+          <ul id="gnb">
+              <li><a href="#">트랜드</a></li>
+              <li><a href="#">쇼핑</a></li>
+              <li id="recommendBoard"><a href="#">추천게시판</a></li>
+          </ul>
 
-    <div class="slider-container">
-        <div class="slider">
-            
-        </div>
-        <button class="prev-btn">&#10094;</button>
-        <button class="next-btn">&#10095;</button>
-    </div>
-    
-    <footer>
-        <div class="inner">
-            <div class="upper">
-                <h1>VESLAB</h1>
-                <ul>
-                    <li><a href="#">Policy</a></li>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">Family Site</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                </ul>
-            </div>
-
-            <div class="lower">
-                <address>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, facere.<br>
-                    TEL : 031-111-1234 C.P : 010-1234-5678
-                </address>
-                <p>
-                    &copy; 2023 VESLAB Trend, All rights reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
-</body>
-
-</html>
+          <ul class="util">
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Help</a></li>
+              <li id="userMenu"><a href="#">User Name</a></li>
+              <li class="api-btn" onclick="logout()"><a href="#">Logout</a></li>
+              <li><a href="#">Sitemap</a></li>
+          </ul>
+      </div>
+  </header>
 
 
-<script>
+  
+  <div class="slider-container">
+      <div class="slider">
+          
+      </div>
+      <button class="prev-btn">&#10094;</button>
+      <button class="next-btn">&#10095;</button>
+  </div>
+  
+  <script>
 
     const img = ["1.png", "4.png"];
     let currentIndex = 0; // 현재 이미지 인덱스
@@ -140,3 +118,36 @@ window.onload = function () {
     
     
 </script>
+
+    <footer>
+        <div class="inner">
+            <div class="upper">
+                <h1>VESLAB</h1>
+                <ul>
+                    <li><a href="#">Policy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Family Site</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <div class="lower">
+                <address>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, facere.<br>
+                    TEL : 031-111-1234 C.P : 010-1234-5678
+                </address>
+                <p>
+                    &copy; 2023 VESLAB Trend, All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    
+
+
+</body>
+
+</html>
+
+

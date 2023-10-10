@@ -1,5 +1,77 @@
 /* 기존 스타일을 수정하거나 추가합니다. */
 
+/* 헤더 스타일 */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+header .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+header #gnb {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+header #gnb li {
+    margin-right: 20px;
+}
+
+header #gnb a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* 유틸리티 메뉴 스타일 */
+.util {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.util li {
+    margin-right: 20px;
+}
+
+.util a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* 로그아웃 버튼 스타일 */
+.api-btn , #userMenu {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.api-btn:hover {
+    background-color: #0056b3;
+}
+
 /* 로그인 버튼 스타일 */
 .api-btn {
     background-color: #007bff;
@@ -10,49 +82,11 @@
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 16px;
-    margin-left: 10px; /* 버튼 사이에 왼쪽 여백 추가 */
+    margin-left: 10px;
 }
 
 .api-btn:hover {
     background-color: #0056b3;
-}
-
-/* 헤더 스타일 */
-header {
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #ddd;
-    padding: 15px 0;
-}
-
-header .inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
-    font-size: 24px;
-    color: #333;
-    text-transform: uppercase;
-}
-
-header .util {
-    list-style: none;
-    display: flex;
-}
-
-header .util li {
-    margin-right: 15px;
-}
-
-header #gnb {
-    list-style: none;
-    display: flex;
-}
-
-header #gnb li {
-    margin-right: 15px;
-    font-weight: bold;
 }
 
 /* 이미지 슬라이더 스타일 */
@@ -103,7 +137,7 @@ footer {
     background-color: #333;
     color: #fff;
     padding: 30px 0;
-    margin-top: 20%; /* 푸터를 아래로 이동시키는 여백 설정 */
+    margin-top: 100%; /* 푸터를 아래로 이동시키는 여백 설정 */
     
 }
 
