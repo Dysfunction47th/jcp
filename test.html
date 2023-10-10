@@ -1,104 +1,110 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<script src="/back/LoginAndLogout/login.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporary Name is Main Page</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+    <link rel="stylesheet" href="/test.css">
+    <script src="/back/LoginAndLogout/logout.js"></script>
 
 </head>
-
-
-
-
 <body>
+    <header>
+        <div class="inner">
+            <h1>VESLAB Trend</h1>
+            <ul class="util">
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Help</a></li>
+                <li id="userMenu"><a href="#">User Name</a></li>
+                <li class="api-btn" onclick="logout()"><a href="#">Logout</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
 
-	<!-- <a id="kakao-login-btn"> <script> login() </script></a> -->
-	<a id="kakao-login-btn"> </a>
-  
-	<button class="api-btn" onclick="unlinkApp()">로그아웃하기</button>
+            <ul id="gnb">
+                <li><a href="#">트랜드</a></li>
+                <li><a href="#">쇼핑</a></li>
+                <li id="recommendBoard"><a href="#">추천게시판</a></li>
+            </ul>
+        </div>
+    </header>
 
-	<div id="result"></div>
+    <div class="slider-container">
+        <div class="slider">
+            <img src="image1.jpg" alt="Image 1">
+            <img src="image2.jpg" alt="Image 2">
+            <img src="image3.jpg" alt="Image 3">
+        </div>
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
+    </div>
 
+    <footer>
+        <div class="inner">
+            <div class="upper">
+                <h1>VESLAB</h1>
+                <ul>
+                    <li><a href="#">Policy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Family Site</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
 
-
-
+            <div class="lower">
+                <address>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, facere.<br>
+                    TEL : 031-111-1234 C.P : 010-1234-5678
+                </address>
+                <p>
+                    &copy; 2023 VESLAB Trend, All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
 
-<script>
-    function logout() {
-    Kakao.init('9e758713051d787381dd4660a0fce536');
-    console.log(Kakao.isInitialized());                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-  
-    Kakao.API.request({
-      url: '/v1/user/unlink',
-      success: function(res) {
-        console.log(res);
-        alert('success: ' + JSON.stringify(res))
-
-      },
-      fail: function(err) {
-        alert('fail: ' + JSON.stringify(err))
-      },
-    })
-    
-    
-    sessionStorage.clear()
-    location.href = "loginPage.html";
-  }
-</script>
-
 
 <script>
-
-function login() {
-        Kakao.init('9e758713051d787381dd4660a0fce536');
-        console.log(Kakao.isInitialized());                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+    $(document).ready(function () {
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.slider img');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
     
-        Kakao.Auth.createLoginButton({
-            container: '#kakao-login-btn',
-            success: function(authObj) {
-            Kakao.API.request({
-                url: '/v2/user/me',
-                success: function(result) {
-                console.log(result);
-                
-                nickname = result.profile_nickname
-                id = result.id
-                connected_at = result.connected_at
-                kakao_account = result.kakao_account
-    
-                sessionStorage.setItem('userId' , id)
-                sessionStorage.setItem('connected_at' , connected_at)
-                sessionStorage.setItem('kakao_account' , kakao_account) 
-                sessionStorage.setItem('nickname' , nickname) 
-                
-                if(typeof kakao_account != 'undefined'){
-                    email = kakao_account.email;
-                    gender = kakao_account.gender;
-                    sessionStorage.setItem("email" , email)
-                    sessionStorage.setItem("gender" , gender)
-    
+        function showImage(index) {
+            images.forEach((image, i) => {
+                if (i === index) {
+                    image.style.transform = 'translateX(0)';
+                } else {
+                    image.style.transform = 'translateX(100%)';
                 }
-                
-                
-
-                
-                },
-                fail: function(error) {
-                alert(
-                    'login success, but failed to request user information: ' +
-                    JSON.stringify(error)
-                )
-                },
-            })
-            },
-            fail: function(err) {
-            alert('failed to login: ' + JSON.stringify(err))
-            },
-        })
-    }
+            });
+        }
+    
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+    
+        function showPrevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+    
+        prevBtn.addEventListener('click', showNextImage); // 이전 이미지로 넘기도록 수정
+        nextBtn.addEventListener('click', showPrevImage); // 다음 이미지로 넘기도록 수정
+    
+        // 자동으로 다음 이미지로 넘어가는 코드
+        setInterval(showNextImage, 1000);
+    });
+    
+    
     
 </script>

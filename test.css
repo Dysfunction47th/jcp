@@ -1,0 +1,130 @@
+/* 기존 스타일을 수정하거나 추가합니다. */
+
+/* 로그인 버튼 스타일 */
+.api-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    margin-left: 10px; /* 버튼 사이에 왼쪽 여백 추가 */
+}
+
+.api-btn:hover {
+    background-color: #0056b3;
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+header .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+header .util {
+    list-style: none;
+    display: flex;
+}
+
+header .util li {
+    margin-right: 15px;
+}
+
+header #gnb {
+    list-style: none;
+    display: flex;
+}
+
+header #gnb li {
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+/* 이미지 슬라이더 스타일 */
+.slider-container {
+    position: relative;
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 20px 0;
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    transition: transform 1s ease;
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+
+
+/* 푸터 스타일 */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+}
+
+footer .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+footer h1 {
+    font-size: 28px;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+}
+
+footer ul li {
+    margin-right: 20px;
+}
+
+footer p {
+    margin-top: 20px;
+}
