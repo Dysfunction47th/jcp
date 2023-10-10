@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="/back/LoginAndLogout/login.js"></script>
+
+
+</head>
+
+
+
+
+<body>
+
+	<!-- <a id="kakao-login-btn"> <script> login() </script></a> -->
+	<a id="kakao-login-btn"> </a>
+  
+	<button class="api-btn" onclick="unlinkApp()">로그아웃하기</button>
+
+	<div id="result"></div>
+
+
+
+
+</body>
+</html>
+
+<script>
+    function logout() {
+    Kakao.init('9e758713051d787381dd4660a0fce536');
+    console.log(Kakao.isInitialized());                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+  
+    Kakao.API.request({
+      url: '/v1/user/unlink',
+      success: function(res) {
+        console.log(res);
+        alert('success: ' + JSON.stringify(res))
+
+      },
+      fail: function(err) {
+        alert('fail: ' + JSON.stringify(err))
+      },
+    })
+    
+    
+    sessionStorage.clear()
+    location.href = "loginPage.html";
+  }
+</script>
+
+
+<script>
+
+function login() {
+        Kakao.init('9e758713051d787381dd4660a0fce536');
+        console.log(Kakao.isInitialized());                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+    
+        Kakao.Auth.createLoginButton({
+            container: '#kakao-login-btn',
+            success: function(authObj) {
+            Kakao.API.request({
+                url: '/v2/user/me',
+                success: function(result) {
+                console.log(result);
+                
+                nickname = result.profile_nickname
+                id = result.id
+                connected_at = result.connected_at
+                kakao_account = result.kakao_account
+    
+                sessionStorage.setItem('userId' , id)
+                sessionStorage.setItem('connected_at' , connected_at)
+                sessionStorage.setItem('kakao_account' , kakao_account) 
+                sessionStorage.setItem('nickname' , nickname) 
+                
+                if(typeof kakao_account != 'undefined'){
+                    email = kakao_account.email;
+                    gender = kakao_account.gender;
+                    sessionStorage.setItem("email" , email)
+                    sessionStorage.setItem("gender" , gender)
+    
+                }
+                
+                
+
+                
+                },
+                fail: function(error) {
+                alert(
+                    'login success, but failed to request user information: ' +
+                    JSON.stringify(error)
+                )
+                },
+            })
+            },
+            fail: function(err) {
+            alert('failed to login: ' + JSON.stringify(err))
+            },
+        })
+    }
+    
+</script>
