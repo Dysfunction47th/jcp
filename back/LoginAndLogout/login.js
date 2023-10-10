@@ -2,8 +2,13 @@
 
 function mainMove() {
     window.location.href = "mainpage.html";
+    
 }
 
+function testMove() {
+    window.location.href = "./test.html";
+    
+}
 
 
 
@@ -40,7 +45,7 @@ function login() {
                 
 
                 mainMove()
-                //testMove()
+                // testMove()
                 
                 },
                 fail: function(error) {
