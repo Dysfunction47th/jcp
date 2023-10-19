@@ -50,7 +50,7 @@ window.onload = function () {
           <h1>CLOTHES SHOPPING Trend</h1>
       
           <ul id="gnb">
-              <li><a href="" , onclick="location.href='C:\jsp\test2\src\main\webapp\jcp\back\NaverShowppingLab.ShowTrendLab.jsp'">trend</a></li>
+              <li><a href="#"  onclick="location.href='C:\jsp\test2\src\main\webapp\jcp\back\NaverShowppingLab.ShowTrendLab.jsp'">trend</a></li>
               <!-- <li><a href="#">ì¼í</a></li> -->
               <li id="recommendBoard"><a href="#">ì¶ì²ê²ìí</a></li>
           </ul>

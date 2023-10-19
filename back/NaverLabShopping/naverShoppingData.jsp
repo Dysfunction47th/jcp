@@ -1,13 +1,42 @@
-<%
-package com.naver.developers.refactoring.datalabtrend;
+    
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="java.sql.*, java.util.* , java.io.* ,
+java.net.HttpURLConnection ,
+java.net.MalformedURLException,
+java.net.URL,
+java.nio.charset.StandardCharsets,
+java.util.HashMap,
+java.util.Map
+    " package com.naver.developers.refactoring.datalabtrend;
+    %>
 
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.Map;
+<%request.setCharacterEncoding("utf-8"); %>    
+
+
+  
+    
+  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<%
+//package com.naver.developers.refactoring.datalabtrend;
+
+//import java.io.*;
+//import java.net.HttpURLConnection;
+//import java.net.MalformedURLException;
+//import java.net.URL;
+//import java.nio.charset.StandardCharsets;
+//import java.util.HashMap;
+//import java.util.Map; -
 
 public class ApiExamDatalabTrendShopping {
 
@@ -91,11 +120,6 @@ public class ApiExamDatalabTrendShopping {
         }
     }
 }
-
-
-
-
-
 
 
 %>
