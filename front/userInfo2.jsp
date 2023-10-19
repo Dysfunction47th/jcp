@@ -1,0 +1,185 @@
+<script src="">
+
+// 이루 유저 아이디를 별명으로 교체해 사 유저아이디 대체 mainpage의 이름 표시 대체 
+// 대략 구성 방식은 jsp를 사용해 if문으로 유저 별명이 있으면 표시하고 없으면 유저아이디 표시 또한 sql에 유저아이디와 별명 등록 
+//   
+
+
+</script>
+
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> user infomation page</title>
+    
+    <link rel="stylesheet" href="/front/css/veslab_style.css">
+    <script src="/back/LoginAndLogout/logout.js"></script>        
+    <link rel="stylesheet" href="/front/css/userInfo.css">
+</head>
+
+<script>
+    // 세션 스토리지에서 유저 ID를 가져오는 함수
+    function getUserID() {
+        // 세션 스토리지에서 userid 키로 저장된 값을 가져옴.
+        const userID = sessionStorage.getItem("userId")
+ 
+        // 만약 유저 ID가 저장되어 있다면 해당 값을 반환하고, 아니면 빈 문자열을 반환.
+        return userID ? userID : "" ;
+  
+    }
+    function getUserEmail() {
+        // 세션 스토리지에서 email 키로 저장된 값을 가져옴.
+        const userEmail = sessionStorage.getItem("email")
+        
+        // 만약 유저 email이 저장되어 있다면 해당 값을 반환하고, 아니면 빈 문자열을 반환.
+        return userEmail ? userEmail : "";
+    }
+
+    function getUserGender() {
+        // 세션 스토리지에서 gender 키로 저장된 값을 가져옴.
+        const userGender = sessionStorage.getItem("gender")
+        // 만약 유저 gender가 저장되어 있다면 해당 값을 반환하고, 아니면 빈 문자열을 반환.
+        return userGender ? userGender : ""; 
+    
+    }
+    function getUserNickname() {
+        // 세션 스토리지에서 nickname 키로 저장된 값을 가져옴.
+        const userNickname = sessionStorage.getItem("nickname")
+        // 만약 유저 nickname가 저장되어 있다면 해당 값을 반환하고, 아니면 빈 문자열을 반환.
+        return userNickname ? userNickname : ""; 
+    
+    }
+
+    // 페이지 로딩 시 실행되는 함수
+    window.onload = function () {
+        // 유저 ID를 가져옴.
+        const userID = getUserID();
+        const userEmail = getUserEmail();
+        const userGender = getUserGender();
+        const userNickname = getUserNickname();
+
+        // 유저 ID가 있으면 해당 ID를 사용하여 <li> 요소를 수정.
+        if (userNickname) {
+            const userMenu = document.getElementById("userMenu");
+            const anchor = userMenu.querySelector("a");
+            anchor.textContent = `${userNickname}님`;
+        }
+
+        if (userEmail) {
+            const userMenu = document.getElementById("email");
+            const anchor = userMenu.querySelector("a");
+            anchor.textContent = `${userEmail} `
+        }
+        
+        if (userGender) {
+            const userMenu = document.getElementById("gender");
+            const anchor = userMenu.querySelector("a");
+            anchor.textContent = `${userGender} `
+        }
+        if (userID) {
+            const userMenu = document.getElementById("userId");
+            const anchor = userMenu.querySelector("a");
+            anchor.textContent = `${userID} `
+        }
+    };
+
+    // 이후 보안을 위해 로컬 스토리지 초기화
+</script>
+
+
+
+<body>
+
+    <header>
+        <div class="inner">
+            <!-- <h1><a href="#">VESLAB</a></h1>  -->
+                        <!-- videoEditSoftwareLAB -->
+            
+            <ul class="util">
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Help</a></li>
+<!--                <li><a href="#" onclick="location.href='login.jsp'">Login</a></li> -->
+				<li id="userMenu"><a href="#" onclick="location.href='userInfo.html'"></a> </li>
+				
+                <li class="api-btn" onclick="logout()"> <a href="#">logout</a></li>
+                <li id="UserLogout"><a href="#" ></a></li>
+                
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+
+
+            <ul id="gnb">
+                <li><a href="#">트랜드</a></li>
+                <!-- <li><a href="#">FOUNCTION</a></li> -->
+                <!-- <li><a href="#">SHOWCASE</a></li> -->
+                <li><a href="#"> 모름 </a></li>
+                <li id=""><a href="#" onclick="location.href='boardAlist.jsp'">추천게시판</a></li>
+            </ul>
+
+
+        </div>
+    </header>
+
+<!-- user infomation change  -->
+    <section>
+        <div class="inner">
+            <span id="userId">
+                <a></a>
+            </span>
+            
+            <span id="email">
+                <a></a>
+            </span>
+            
+            <span id="gender">
+                <a></a>
+                
+            </span>
+            
+            <span>
+                this area is four
+            </span>
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="inner">
+            <div class="upper">
+                <h1>VESLAB</h1>
+                <ul>
+                    <li><a href="#">Policy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Family Site</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <div class="lower">
+                <address>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, facere.<br>
+                    TEL : 031-111-1234 C.P : 010-1234-5678
+                </address>
+                <p>
+                    2020 VESLAB &copy; copyright all right reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+</html>
