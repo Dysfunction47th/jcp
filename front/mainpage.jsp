@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="java.sql.*, java.util.*"%>
+    <%request.setCharacterEncoding("utf-8"); %>
+
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,38 +12,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title> Main Page</title>
-
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="../front/css/veslab_style.css">
-    <script src="/back/LoginAndLogout/logout_jsp.js"></script>
+    <link rel="stylesheet" href="./css/veslab_style.css">
+    <script src="../back/LoginAndLogout/logout.js"></script>
 
 </head>
 
 <script>
-  
+  // 세션 스토리지에서 유저 ID를 가져오는 함수
   function getUserID() {
-     
+   
+   // 세션 스토리지에서 userid 키로 저장된 값을 가져옴.
+   
    const userNickname = sessionStorage.getItem("nickname")
+   
+   // 만약 유저 ID가 저장되어 있다면 해당 값을 반환하고, 아니면 빈 문자열을 반환.
    
    return userNickname ? userNickname : ""; 
 //dsd
 
 }
 
+// 페이지 로딩 시 실행되는 함수
 window.onload = function () {
 
    const userNickname = getUserID();
 
+   // 유저 ID가 있으면 해당 nickname을 사용하여 <li> 요소를 수정.
    if (userNickname) {
        const userMenu = document.getElementById("userMenu");
        const anchor = userMenu.querySelector("a");
-       anchor.textContent = `${userNickname}ë`;
+       anchor.textContent = `${userNickname}님`;
    }
 };
 
+// 이후 보안을 위해 로컬 스토리지 초기화
 </script>
 
 
@@ -50,9 +61,12 @@ window.onload = function () {
           <h1>CLOTHES SHOPPING Trend</h1>
       
           <ul id="gnb">
-              <li><a href="#"  onclick="location.href='C:\jsp\test2\src\main\webapp\jcp\back\NaverShowppingLab.ShowTrendLab.jsp'">trend</a></li>
-              <!-- <li><a href="#">ì¼í</a></li> -->
-              <li id="recommendBoard"><a href="#">ì¶ì²ê²ìí</a></li>
+              <!-- <li><a href="#">지금 트랜드</a></li> -->
+              <li><a href="#"  onclick="location.href='C:\jsp\test2\src\main\webapp\jcp\back\NaverShowppingLab.ShowTrendLab.jsp'">trend</a></li>
+              
+              <!-- <li><a href="#">쇼핑</a></li> -->
+              <li id="recommendBoard"><a href="#">추천게시판</a></li>
+              
           </ul>
 
           <ul class="util">
@@ -78,33 +92,35 @@ window.onload = function () {
   <script>
 
     const img = ["1.png", "4.png"];
-    let currentIndex = 0; // íì¬ ì´ë¯¸ì§ ì¸ë±ì¤
+    let currentIndex = 0; // 현재 이미지 인덱스
     
     function updateSlider() {
-
+        // 다음 이미지 인덱스 계산
         currentIndex = (currentIndex + 1) % img.length;
     
+        // 현재 이미지 URL 가져오기
         const currentImg = img[currentIndex];
     
+        // 이미지 요소 업데이트
         bgImage.src = "/asset/clothImg/" + currentImg;
     }
     
-    // ì´ë¯¸ì§ ìì ìì±
+    // 이미지 요소 생성
     const bgImage = document.createElement("img");
     
-    // ì¬ë¼ì´ë ì»¨íì´ë ìì ê°ì ¸ì¤ê¸°
+    // 슬라이더 컨테이너 요소 가져오기
     const sliderContainer = document.querySelector(".slider-container");
     
-    // ì¬ë¼ì´ë ìì ê°ì ¸ì¤ê¸°
+    // 슬라이더 요소 가져오기
     const slider = sliderContainer.querySelector(".slider");
     
-    // ì´ë¯¸ì§ ììë¥¼ ì¬ë¼ì´ëì ì¶ê°
+    // 이미지 요소를 슬라이더에 추가
     slider.appendChild(bgImage);
     
-    // ì¬ë¼ì´ë ì»¨íì´ëì ì¬ë¼ì´ëë¥¼ ì¶ê°
+    // 슬라이더 컨테이너에 슬라이더를 추가
     document.body.appendChild(sliderContainer);
     
-    // 2ì´ë§ë¤ ì¬ë¼ì´ë ìë°ì´í¸
+    // 2초마다 슬라이더 업데이트
     setInterval(updateSlider, 2000);
     
     
@@ -114,62 +130,62 @@ window.onload = function () {
 <section>
     <div class="page-container">
        <div class="section">
-           <div class="recommendation-title"> <h1>ë¬´ì ì¬ ë¨ì± ê°ì</h1></div>
+           <div class="recommendation-title"> <h1>무신사 남성 가을</h1></div>
                 <div class="product-container">
                     <div class="product">
-                        <img src="/asset/testimg/test_men1.jpg" alt="1ë²ì§¸ ì½íì¸  ì´ë¯¸ì§">
+                        <img src="../asset/testimg/test_men1.jpg" alt="1번째 콘텐츠 이미지">
                         <a href="https://www.musinsa.com/app/goods/2723764?loc=goods_rank">
-                        <h2 class="title">íì° ì¹´ë¼ í¬ì¨ì´ ì§ì ëí¸</h2>
+                        <h2 class="title">하찌 카라 투웨이 집업 니트</h2>
                         </a>
                         <p class="description">
-                            - ììë¸ ê°ë¥í ìì¬ ì¬ì©   <br>
-                            - ììë  ë¡ê³  ì¬ì©í í¸í¨<br>
-                            - íì´íë¦¬í° í¸ì§ ëíì¼
+                            - 워셔블 가능한 원사 사용   <br>
+                            - 수아레 로고 사용한 편함<br>
+                            - 하이퀄리티 편직 디테일
                         </p>
                        
                     </div>
                     <div class="product">
-                        <img src="/asset/testimg/test_men2.jpg" alt="2ë²ì§¸ ì½íì¸  ì´ë¯¸ì§">
+                        <img src="../asset/testimg/test_men2.jpg" alt="2번째 콘텐츠 이미지">
                         <a href="https://www.musinsa.com/app/goods/1551840?loc=goods_rank">
                         <h2 class="title">Deep One Tuck Sweat Pants</h2>
                         </a>
                         <p class="description">
-                            - êµ­ë´ë°© 35ì ì½ë§ì¬ ì¬ì©   <br>
-                            - ê¸°ì¡´ ì¬ë¦ì© ìë¨ë³´ë¤ ìì<br>
-                            - ë³´ì¨ì±ì ëì¸ ìë¨ì ì¬ì©
+                            - 국내방 35수 코마사 사용   <br>
+                            - 기존 여름용 원단보다 시원<br>
+                            - 보온성을 높인 원단을 사용
                         </p>
                     </div>
                     <div class="product">
-                        <img src="/asset/testimg/test_men3.jpg" alt="3ë²ì§¸ ì½íì¸  ì´ë¯¸ì§">
+                        <img src="../asset/testimg/test_men3.jpg" alt="3번째 콘텐츠 이미지">
                         <a href="https://www.musinsa.com/app/goods/2043056?loc=goods_rank">
-                        <h2 class="title">CGP ìì¹ ë¡ê³  í¸ë ì´ë ìì_ë¤ì´ë¹</h2>
+                        <h2 class="title">CGP 아치 로고 트레이닝 셋업_네이비</h2>
                         </a>
                         <p class="description">
-                            - ë¯¸ì§ê·¼í ë¬¼ì ì¤ì±ì¸ì    <br>
-                            - ê¸°ê³ ê±´ì¡° ì¬ì©ì ìì<br>
-                            - ê³ ì¨ ì¸í ë° ì©í´ì¡°ì¬
+                            - 미지근한 물에 중성세제   <br>
+                            - 기계 건조 사용시 손상<br>
+                            - 고온 세탁 및 용해조심
                         </p>
                     </div>
                     <div class="product">
-                        <img src="/asset/testimg/test_men4.jpg" alt="4ë²ì§¸ ì½íì¸  ì´ë¯¸ì§">
+                        <img src="../asset/testimg/test_men4.jpg" alt="4번째 콘텐츠 이미지">
                         <a href="https://www.musinsa.com/app/goods/1778404?loc=goods_rank">
-                        <h2 class="title">ì¤ì» íë ì§ì</h2>
+                        <h2 class="title">스웻 후드 집업</h2>
                         </a>
                         <p class="description">
-                            - ë³íì´ ì ê³  ííí ìë¨   <br>
-                            - ì¤ë²íì¼ë¡ í¸ìí ì°©ì©<br>
-                            - ë¨í ë° ì´ëë¡ íì© ê°ë¥
+                            - 변형이 적고 탄탄한 원단   <br>
+                            - 오버핏으로 편안한 착용<br>
+                            - 단품 및 이너로 활용 가능
                         </p>
                     </div>
                     <div class="product">
-                        <img src="/asset/testimg/test_men5.jpg" alt="5ë²ì§¸ ì½íì¸  ì´ë¯¸ì§">
+                        <img src="../asset/testimg/test_men5.jpg" alt="5번째 콘텐츠 이미지">
                         <a href="https://www.musinsa.com/app/goods/2996544?loc=goods_rank">
-                        <h2 class="title">ì¬ë°ì´ ë¼ì´ë ëí¸</h2>
+                        <h2 class="title">올데이 라운드 니트</h2>
                         </a>
                         <p class="description">
-                            - ììë¸ ê°ë¥í ìì¬ ì¬ì©   <br>
-                            - ì¬ì¬ì íì´íë¦¬í° í¸ì§<br>
-                            - SPANì¬ë¥¼ ëí´ ì¡ìì¤
+                            - 워셔블 가능한 원사 사용   <br>
+                            - 올사시 하이퀄리티 편직<br>
+                            - SPAN사를 더해 잡아줌
                         </p>
                     </div>
                 </div>
@@ -179,58 +195,58 @@ window.onload = function () {
     <section>
        <div class="page-container">
             <div class="section">
-                <div class="recommendation-title"><h1>ë¬´ì ì¬ ì¬ì± ê°ì</h1></div>
+                <div class="recommendation-title"><h1>무신사 여성 가을</h1></div>
                     <div class="product-container">
                         <div class="product">
-                            <img src="/asset/testimg/test_women1.jpg" alt="1ë²ì¨° ì½íì¸  ì´ë¯¸ì§">
+                            <img src="../asset/testimg/test_women1.jpg" alt="1번쨰 콘텐츠 이미지">
                             <a href="https://www.musinsa.com/app/goods/1618312?loc=goods_rank">
-                            <h2 class="title"> ì°ë¨¼ì¦ ì¤ë²ì¬ì´ì¦ ë¸ë ì´ì  </h2>
+                            <h2 class="title"> 우먼즈 오버사이즈 블레이저 </h2>
                             </a>
                             <p class="description">
-                                - ìëª¨ì§ë¬¼ì ì¬ì©   <br>
-                                - ìë£ì¼ ìì¡ì ì²¨ê°<br>
-                                - ëì  ë°©ì§ ê°ê³µ
+                                - 소모직물을 사용   <br>
+                                - 원료염 원액에 첨가<br>
+                                - 대전 방지 가공
                             </p>
                         </div>
                         <div class="product">    
-                            <img src="/asset/testimg/test_women2.jpg" alt="2ë²ì¨° ì½íì¸  ì´ë¯¸ì§">
+                            <img src="../asset/testimg/test_women2.jpg" alt="2번쨰 콘텐츠 이미지">
                             <a href="https://www.musinsa.com/app/goods/3124490?loc=goods_rank">
-                            <h2 class="title">íë¡ í¸ ìì± ìì´ë ë°ë í¬ì¸ </h2>
+                            <h2 class="title">프론트 워싱 와이드 데님 팬츠</h2>
                             </a>
                             <p class="description">
-                                - ììë¸ ê°ë¥í ìì¬ ì¬ì©   <br>
-                                - ì¬ì¬ì íì´íë¦¬í° í¸ì§<br>
-                                - SPANì¬ë¥¼ ëí´ ì¡ìì¤</p>
+                                - 워셔블 가능한 원사 사용   <br>
+                                - 올사시 하이퀄리티 편직<br>
+                                - SPAN사를 더해 잡아줌</p>
                         </div>
                         <div class="product">
-                            <img src="/asset/testimg/test_women3.jpg" alt="3ë²ì¨° ì½íì¸  ì´ë¯¸ì§">
+                            <img src="../asset/testimg/test_women3.jpg" alt="3번쨰 콘텐츠 이미지">
                             <a href="https://www.musinsa.com/app/goods/3223947?loc=goods_rank">
-                            <h2 class="title"> ìí± ìì´ë ì¤ì¨í¸ í¬ì¸ </h2>
+                            <h2 class="title"> 원턱 와이드 스웨트 팬츠</h2>
                             </a>
                             <p class="description">
-                                - ìëª¨ì§ë¬¼ì ì¬ì©   <br>
-                                - ìë£ì¼ ìì¡ì ì²¨ê°<br>
-                                - ëì  ë°©ì§ ê°ê³µ</p>
+                                - 소모직물을 사용   <br>
+                                - 원료염 원액에 첨가<br>
+                                - 대전 방지 가공</p>
                         </div>
                         <div class="product">    
-                            <img src="/asset/testimg/test_women4.jpg" alt="4ë²ì¨° ì½íì¸  ì´ë¯¸ì§">
+                            <img src="../asset/testimg/test_women4.jpg" alt="4번쨰 콘텐츠 이미지">
                             <a href="https://www.musinsa.com/app/goods/2718414?loc=goods_rank">
-                            <h2 class="title">íì¤ ì½í¼ ì¬ ë°ì´ íë ì§ì ë©ëì§ ìì´ë³´ë¦¬</h2>
+                            <h2 class="title">테오 코튼 올 데이 후드 집업 멜란지 아이보리</h2>
                             </a>
                             <p class="description">
-                                - ë¯¸ì§ê·¼í ë¬¼ì ì¤ì±ì¸ì    <br>
-                                - ê¸°ê³ ê±´ì¡° ì¬ì©ì ìì<br>
-                                - ê³ ì¨ ì¸í ë° ì©í´ì¡°ì¬</p>
+                                - 미지근한 물에 중성세제   <br>
+                                - 기계 건조 사용시 손상<br>
+                                - 고온 세탁 및 용해조심</p>
                         </div>
                         <div class="product">
-                            <img src="/asset/testimg/test_women5.jpg" alt= "5ë²ì¨° ì½íì¸  ì´ë¯¸ì§">
+                            <img src="../asset/testimg/test_women5.jpg" alt= "5번쨰 콘텐츠 이미지">
                             <a href="https://www.musinsa.com/app/goods/2874755?loc=goods_rank">
                             <h2 class="title">Sac de Velo Mini </h2>
                             </a>
                             <p class="description">
-                                - ë¯¸ì§ê·¼í ë¬¼ì ì¤ì±ì¸ì    <br>
-                                - ê¸°ê³ ê±´ì¡° ì¬ì©ì ìì<br>
-                                - ê³ ì¨ ì¸í ë° ì©í´ì¡°ì¬</p>
+                                - 미지근한 물에 중성세제   <br>
+                                - 기계 건조 사용시 손상<br>
+                                - 고온 세탁 및 용해조심</p>
                             </p>
                         </div>
                     </div>

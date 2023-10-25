@@ -1,3 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="java.sql.*, java.util.*"%>
+    <%request.setCharacterEncoding("utf-8"); %>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +30,7 @@
 
             </div>
             
-            <button class="api-btn" onclick="unlinkApp()">logout��</button>
+            <button class="api-btn" onclick="unlinkApp()">logout</button>
 
         </form>
     </div>
