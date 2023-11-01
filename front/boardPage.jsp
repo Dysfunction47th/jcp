@@ -13,7 +13,11 @@
     <title> Main Page</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+<<<<<<< HEAD
     <link rel="stylesheet" href="./css/boardPage.css">
+=======
+    <link rel="stylesheet" href="./css/veslab_style.css">
+>>>>>>> 14a8d777286f3ccdf307dbef14fa6c49e71ba126
     <script src="/back/LoginAndLogout/logout.js"></script>
 
 </head>
@@ -65,11 +69,19 @@ if (in_search_value == null) in_search_value="";
           <h1>CLOTHES SHOPPING Trend</h1>
       
           <ul id="gnb">
+<<<<<<< HEAD
               <li><a href="http://localhost:8080/JSP/jcp/front/trends.jsp">지금 트랜드</a></li>
               <!-- <li><a href="#"  onclick="location.href='C:\jsp\test2\src\main\webapp\jcp\back\NaverShowppingLab.ShowTrendLab.jsp'">trend</a></li> -->
               
               <!-- <li><a href="#">쇼핑</a></li> -->
               <li id="recommendBoard"><a href="boardPage.jsp">추천게시판</a></li>
+=======
+              <li><a href="#">지금 트랜드</a></li>
+              <!-- <li><a href="#"  onclick="location.href='C:\jsp\test2\src\main\webapp\jcp\back\NaverShowppingLab.ShowTrendLab.jsp'">trend</a></li> -->
+              
+              <!-- <li><a href="#">쇼핑</a></li> -->
+              <li id="recommendBoard"><a href="#">추천게시판</a></li>
+>>>>>>> 14a8d777286f3ccdf307dbef14fa6c49e71ba126
               
           </ul>
 
@@ -133,24 +145,41 @@ if (in_search_value == null) in_search_value="";
 <section>
 
 
+<<<<<<< HEAD
 <h3>옷 추천 게시판</h3>
 <form name="form1" action="boardPage.jsp" method="post">
+=======
+<h3>공지사항 리스트</h3>
+<form name="form1" action="boardBlist.jsp" method="post">
+>>>>>>> 14a8d777286f3ccdf307dbef14fa6c49e71ba126
 <select name="search_key">
 <option value="title">제목</option>
 <option value="title">작성자</option>
 </select>
 <input type="text" name="search_value" value=<%=in_search_value %>>
+<<<<<<< HEAD
 <input type="submit" class="button" value="검색">
+=======
+<input type="submit" value="검색">
+>>>>>>> 14a8d777286f3ccdf307dbef14fa6c49e71ba126
 
 <br><br>
 <table border="1" cellspacing="1" cellpadding="2" width="700">
 <thead>
 <tr>
+<<<<<<< HEAD
 <th width="10%">번호</th>
 <th width="*">제목</th>
 <th width="13%">작성자</th>
 <th width="20%">등록일</th>
 <th width="20%">조회수</th>
+=======
+<th width="5%">번호</th>
+<th width="*">제목</th>
+<th width="13%">작성자</th>
+<th width="20%">등록일</th>
+<th width="25%">조회수</th>
+>>>>>>> 14a8d777286f3ccdf307dbef14fa6c49e71ba126
 
 </tr>
 </thead>
@@ -160,6 +189,10 @@ if(strPageNum == null){
    strPageNum = "1";
 }
 int currentPage = Integer.parseInt(strPageNum);
+<<<<<<< HEAD
+=======
+out.print(currentPage + "****");
+>>>>>>> 14a8d777286f3ccdf307dbef14fa6c49e71ba126
 //단계1
 Class.forName("com.mysql.jdbc.Driver");
 //단계2
@@ -172,7 +205,11 @@ stmt = conn.createStatement();
 rs = stmt.executeQuery(sql);
 rs.next();
 int totalRecords = 0;
+<<<<<<< HEAD
 int pageSize = 12; 
+=======
+int pageSize = 3; 
+>>>>>>> 14a8d777286f3ccdf307dbef14fa6c49e71ba126
 totalRecords = rs.getInt(1);
 if(rs.getInt(1)==0){
    %>
@@ -199,8 +236,13 @@ else{
       int readcnt = rs1.getInt("readcnt");
       %>
 <tr>
+<<<<<<< HEAD
 <td><a href="boardview.jsp?pnum=<%=num%>"><%=num%></a></td>
 <td><a href="boardview.jsp?pnum=<%=num%>"><%=title %></a></td>
+=======
+<td><a href="boardBview.jsp?pnum=<%=num%>"><%=num%></a></td>
+<td><a href="boardBview.jsp?pnum=<%=num%>"><%=title %></a></td>
+>>>>>>> 14a8d777286f3ccdf307dbef14fa6c49e71ba126
 <td><%=writer %></td>
 <td><%=writedtm %></td>
 <td><%=readcnt %></td>
@@ -245,7 +287,11 @@ if(intGrpEndPage > intTotPages){
 
    if(currentGrp > 1) {
       %>
+<<<<<<< HEAD
       [<a href="boardPage.jsp?PageNum=<%=intGrpStartPage - 1  %>">이전</a>]
+=======
+      [<a href="boardBlist.jsp?PageNum=<%=intGrpStartPage - 1  %>">이전</a>]
+>>>>>>> 14a8d777286f3ccdf307dbef14fa6c49e71ba126
    <% 
    }
 
@@ -254,7 +300,11 @@ if(intGrpEndPage > intTotPages){
    
    while(intGrpPageCount > 0 && intIndex <=intGrpEndPage){
       %>
+<<<<<<< HEAD
       <a href="boardPage.jsp?PageNum=<%=intIndex  %>"><%=intIndex %></a>&nbsp;
+=======
+      [<a href="boardBlist.jsp?PageNum=<%=intIndex  %>"><%=intIndex %></a>]&nbsp;
+>>>>>>> 14a8d777286f3ccdf307dbef14fa6c49e71ba126
    <% 
    intIndex += 1;
    intGrpPageCount -= 1;
@@ -262,12 +312,20 @@ if(intGrpEndPage > intTotPages){
    
    if(intIndex <= intTotPages) {
       %>
+<<<<<<< HEAD
       <a href="boardPage.jsp?PageNum=<%=intIndex %>">다음</a>&nbsp;
+=======
+      [<a href="boardBlist.jsp?PageNum=<%=intIndex %>">다음</a>]&nbsp;
+>>>>>>> 14a8d777286f3ccdf307dbef14fa6c49e71ba126
       <% 	
    }
 %>
 </form>
+<<<<<<< HEAD
 <form name="form2" action="boardwrite.jsp" method="post">
+=======
+<form name="form2" action="boardBwrite.jsp" method="post">
+>>>>>>> 14a8d777286f3ccdf307dbef14fa6c49e71ba126
 <input type="submit" value="새글쓰기">
 </form>
 
