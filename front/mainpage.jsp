@@ -62,10 +62,10 @@ window.onload = function () {
       
           <ul id="gnb">
               <!-- <li><a href="#">지금 트랜드</a></li> -->
-              <li><a href="#"  onclick="location.href='C:\jsp\test2\src\main\webapp\jcp\back\NaverShowppingLab.ShowTrendLab.jsp'">trend</a></li>
+              <li><a href="http://localhost:8080/JSP/jcp/front/trends.jsp"  onclick="location.href='C:\jsp\test2\src\main\webapp\jcp\back\NaverShowppingLab.ShowTrendLab.jsp'">지금 트랜드</a></li>
               
               <!-- <li><a href="#">쇼핑</a></li> -->
-              <li id="recommendBoard"><a href="#">추천게시판</a></li>
+              <li id="recommendBoard"><a href="boardPage.jsp">추천게시판</a></li>
               
           </ul>
 
