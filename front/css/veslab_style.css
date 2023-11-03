@@ -104,8 +104,9 @@ header #gnb a {
 }
 
 .slider img {
-    width: 100%;
-    height: auto;
+    width: 100%; /* Let the width adjust automatically to maintain aspect ratio */
+    max-height: 600px; /* Set a maximum height for the image */
+    object-fit: cover; /* Maintain aspect ratio and cover the available space */
     transition: transform 1s ease;
 }
 

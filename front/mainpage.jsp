@@ -91,7 +91,7 @@ window.onload = function () {
   
   <script>
 
-    const img = ["1.png", "4.png"];
+    const img = ["1.png","2.png","3.png", "4.png" ,"5.png"];
     let currentIndex = 0; // 현재 이미지 인덱스
     
     function updateSlider() {
