@@ -128,58 +128,99 @@ window.onload = function () {
 
 	<section>
     <table class="chart-table">
-            <caption>9월 인기상품</caption>
+            <caption>이달 인기상품</caption>
             <tr>
                 <th>순위</th>
                 <th>상품</th>
             </tr>
             <tr>
                 <td>1</td>
-                <td><a href="#">원피스</a></td>
+                <td><a href="#">베이직 퍼플라스 집업</a></td>
             </tr>
             <tr>
                 <td>2</td>
-                <td><a href="#">트위드자켓</a></td>
+                <td><a href="#"> Deep One Tuck Sweat Pants [Grey]</a></td>
             </tr>
             <tr>
                 <td>3</td>
-                <td><a href="#">써스데이아일랜드원피스</a></td>
+                <td><a href="#">버뮤다 - 핑크 / GY7386 </a></td>
             </tr>
             <tr>
                 <td>4</td>
-                <td><a href="#">가을원피스</a></td>
+                <td><a href="#">원턱 와이드 스웨트팬츠 그레이</a></td>
             </tr>
             <tr>
                 <td>5</td>
-                <td><a href="#">가디건</a></td>
+                <td><a href="#">베이직 푸퍼_SPJPD4TC11</a></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><a href="#"> 2WAY 스웻 후드 집업 (MELANGE GREY) </a></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><a href="#">아식스 X 언어펙티드 젤-카야노 14 - 브라이트 화이트:제트 블랙</a></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><a href="#">슈퍼스타 82 - 블랙</a></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><a href="#">오버핏 비건레더 싱글 자켓 </a></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><a href="#">세미 와이드 히든 밴딩 슬랙스 [블랙] </a></td>
             </tr>
         </table>
         <table class="chart-table"> <!-- 인기 순위 차트 테이블에 'chart-table' 클래스를 추가합니다. -->
-            <caption>10월 인기상품</caption>
+            <caption>주간 인기상품</caption>
             <tr>
                 <th>순위</th>
                 <th>상품</th>
             </tr>
             <tr>
                 <td>1</td>
-                <td><a href="#">원피스</a></td>
+                <td><a href="#">아식스 X 언어펙티드 젤-카야노 14 - 브라이트 화이트:제트 블랙 </a></td>
             </tr>
             <tr>
                 <td>2</td>
-                <td><a href="#">드위드자켓</a></td>
+                <td><a href="#">Traum Balmacaan Long Coat [Black]</a></td>
             </tr>
             <tr>
                 <td>3</td>
-                <td><a href="#">맨투맨</a></td>
+                <td><a href="#"> Deep One Tuck Sweat Pants [Grey]</a></td>
             </tr>
             <tr>
                 <td>4</td>
-                <td><a href="#">경량패딩</a></td>
+                <td><a href="#">슈퍼스타 82 - 블랙 / GY3428</a></td>
             </tr>
             <tr>
                 <td>5</td>
-                <td><a href="#">후드티</a></td>
+                <td><a href="#">버뮤다 - 핑크 / GY7386 </a></td>
             </tr>
+            <tr>
+                <td>6</td>
+                <td><a href="#"> 베이직 푸퍼_SPJPD4TC11 </a></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><a href="#"> 2WAY 스웻 후드 집업 (MELANGE GREY)  </a></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><a href="#">세미 와이드 히든 밴딩 슬랙스 [블랙] </a></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><a href="#">우먼즈 캐시미어 블렌드 발마칸 로브 코트 [블랙] </a></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><a href="#"> 원턱 와이드 스웨트팬츠 그레이 </a></td>
+            </tr>
+          
         </table>
 	
     </section>
