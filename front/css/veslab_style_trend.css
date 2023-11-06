@@ -236,34 +236,66 @@ footer p {
     margin-top: 20px;
 }
 section {
+    width: 80%; /* 원하는 크기로 조절합니다. */
+    margin: 0 auto;
+    margin-top: 0px;
     display: flex;
     justify-content: center; /* 테이블을 수평으로 중앙에 모으도록 설정합니다. */
+            
 }
 
-table {
-    border-collapse: collapse;
-    width: 10%; /* 테이블 너비를 줄입니다. */
-    margin: 20px 0; /* 위아래로 공간을 늘립니다. */
-}
-
-table, th, td {
-    border: 1px solid black;
-}
-
-th, td {
-    padding: 10px;
-    text-align: center;
-    font-size: 14px; /* 글자 크기를 조절합니다. */
-}
-
-a {
-    text-decoration: none;
-    color: #333; /* 밝은 회색계열의 글자 색상을 지정합니다. */
-}
-
+/* "chart-table" 클래스에 대한 테이블 스타일 추가 또는 수정 */
 .chart-table {
-    border: 2px solid black;
-    text-align: center;
-    width: 20%;
-    background-color: #f3f3f3; /* 밝은 회색계열의 배경을 추가합니다. */
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #fff;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart-table caption {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.chart-table th, .chart-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.chart-table th {
+    background-color: #333;
+    color: #fff;
+}
+
+.chart-table a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.chart-table a.rank-link {
+    text-decoration: none;
+    color: inherit; /* 순위를 가리키는 링크의 색상을 상속합니다. */
+}
+
+.chart-table a:hover {
+    color: #ff0000;
+}
+
+.chart-table td:hover {
+    background-color: #ffcccb;
+    transition: background-color 0.2s;
+}
+
+.chart-table tr:hover {
+    background-color: #f5f5f5;
+    transition: background-color 0.2s;
+    border-radius: 8px;
 }
