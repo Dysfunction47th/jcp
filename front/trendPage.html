@@ -51,79 +51,44 @@ window.onload = function () {
 
 <body>
 
+    
+
+    <header>
+        <div class="inner1">
+            <h1>musinsa top10</h1>
+            
+            <ul class="util">
+                
+                <li id="userMenu" > <img src="../asset/login/login_img.png" alt="" srcset=""> <a href="./loginPage.html" id="login_word">로그인 해주세요</a></li>
+                <!-- <li class="api-btn" onclick="logout()"><a href="#">Logout</a></li> -->
+                
+            </ul>
+        </div>
+        
+    </header>
+
+
+  <header id="bener2">
+    <div class="inner">
+    
+        <ul id="gnb">
+            <!-- <li><a href="#">지금 트랜드</a></li> -->
+            <li><a href="http://localhost:8080/JSP/jcp/front/trends.jsp"  onclick="location.href='C:\jsp\test2\src\main\webapp\jcp\back\NaverShowppingLab.ShowTrendLab.jsp'">지금 트랜드</a></li>
+            
+            <!-- <li><a href="#">쇼핑</a></li> -->
+            <li id="recommendBoard"><a href="boardPage.jsp">추천게시판</a></li>
+            
+            <!-- <li><a href="#">메인</a></li> -->
+            <li id=""><a href="mainPage.html">게시판</a></li>
+            <!-- <li id=""><a href="mainPage.jsp">추천게시판</a></li> -->
+
+        </ul>
+
+    </div>
+</header>
+
   
-  <header>
-      <div class="inner">
-          <h1>CLOTHES SHOPPING Trend</h1>
-      
-          <ul id="gnb">
-              <!-- <li><a href="#">지금 트랜드</a></li> -->
-              <li><a href="http://localhost:8080/JSP/jcp/front/trends.jsp"  onclick="location.href='C:\jsp\test2\src\main\webapp\jcp\back\NaverShowppingLab.ShowTrendLab.jsp'">지금 트랜드</a></li>
-              
-              <!-- <li><a href="#">쇼핑</a></li> -->
-              <li id="recommendBoard"><a href="boardPage.jsp">추천게시판</a></li>
-              
-              <!-- <li><a href="#">메인</a></li> -->
-              <li id=""><a href="mainPage.html">게시판</a></li>
-              <!-- <li id=""><a href="mainPage.jsp">추천게시판</a></li> -->
-              
 
-          </ul>
-
-          <ul class="util">
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Help</a></li>
-              <li id="userMenu"><a href="#">User Name</a></li>
-              <li class="api-btn" onclick="logout()"><a href="#">Logout</a></li>
-              <li><a href="#">Sitemap</a></li>
-          </ul>
-      </div>
-  </header>
-
-
-  
-  <div class="slider-container">
-      <div class="slider">
-          
-      </div>
-      <button class="prev-btn">&#10094;</button>
-      <button class="next-btn">&#10095;</button>
-  </div>
-  
-  <script>
-
-    const img = ["1.png","2.png","3.png", "4.png" ,"5.png"];
-    let currentIndex = 0; // 현재 이미지 인덱스
-    
-    function updateSlider() {
-        // 다음 이미지 인덱스 계산
-        currentIndex = (currentIndex + 1) % img.length;
-    
-        // 현재 이미지 URL 가져오기
-        const currentImg = img[currentIndex];
-    
-        // 이미지 요소 업데이트
-        bgImage.src = "/asset/clothImg/" + currentImg;
-    }
-    
-    // 이미지 요소 생성
-    const bgImage = document.createElement("img");
-    
-    // 슬라이더 컨테이너 요소 가져오기
-    const sliderContainer = document.querySelector(".slider-container");
-    
-    // 슬라이더 요소 가져오기
-    const slider = sliderContainer.querySelector(".slider");
-    
-    // 이미지 요소를 슬라이더에 추가
-    slider.appendChild(bgImage);
-    
-    // 슬라이더 컨테이너에 슬라이더를 추가
-    document.body.appendChild(sliderContainer);
-    
-    // 2초마다 슬라이더 업데이트
-    setInterval(updateSlider, 2000);
-</script>
 
 
 	<section>

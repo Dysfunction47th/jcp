@@ -5,6 +5,12 @@ header {
     padding: 15px 0;
     font-size: 18px;
     text-align: center;
+    width: 80%;
+    border-collapse: collapse;
+    background-color: black;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 header .inner {
@@ -18,10 +24,16 @@ header .inner1 h1 {
     font-size: 36px;
     color: #fff;
     text-transform: uppercase;
-    
-    /* margin-left: 100px; Add margin-left property */
-    margin-right: 50px; /* Add margin-left property */
+    margin-right: 1px; /* Add margin-left property */
+}
 
+header .inner1 p {
+    font-size: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-right: -70px; /* Add margin-left property */
+    margin-top: -20px;
+    color:#1181ff;
 }
 
 header .inner1 {
@@ -31,17 +43,15 @@ header .inner1 {
     padding: 0 20px;
 }
 
-
 /* 유틸리티 메뉴 스타일 */
 .util {
     list-style: none;
     display: flex;
     align-items: center;
-    
 }
 
 .util li {
-    margin-right: 90px;
+    margin-right: 40px;
 }
 
 .util a {
@@ -52,41 +62,115 @@ header .inner1 {
 }
 
 /* 로그인 버튼 스타일 */
- #userMenu img {
-    
+#userMenu img {
     transition: background-color 0.3s;
     background-color: whitesmoke;
     max-width: 8%;
     max-height: 7%;
-    border-radius: 100%
-    
+    border-radius: 100%;
 }
 
 #userMenu a {
     position: relative;
-    top: -20px;
+    top: -15px;
     color: white; /* 폰트 컬러를 화이트로 설정 */
-    border-bottom-width: -1000px;
+    font-size: large;
 }
 
 /* 로그인 아웃 버튼 스타일 */
-
 .api-btn:hover {
     color: white;
+    font-size: large;
 }
+
 
 .api-btn a {
-    color: white;
-    right: -500px;
+    color: white; /* 폰트 컬러를 화이트로 설정 */
+    text-decoration: none;
+    margin-left: -450px;
+    top: -20px;
+    font-size: large;
+    text-transform: uppercase;
 }
 
-
-
-
-.product a {
-    text-decoration: none; 
-    color: inherit; 
+/* show_site style */
+#show_site h2 {
+    font-size: 36px;
+    color: #fff;
+    color: #333;
+    text-align: center;
 }
+
+/* categori */
+#category #cate_color{
+    background-color:#b0b7be;
+    color: black;
+}
+
+#cate_color {
+    background-color:#1181ff /* 원하는 색상을 여기에 입력하세요 */
+}
+
+#category h1 {
+    margin-left: 500px;
+    font-size: 28px;
+    margin-top: 20px;
+}
+
+.category-left {
+    margin-left: -400px;
+    margin-right: 80px;
+}
+
+.category-left a {
+    margin-left: 50px;
+    text-decoration: none;
+    color: black;
+}
+
+.category-right {
+    margin-left: 50px;
+    margin-right: 120px; /* 여성과 남성 간의 간격을 더 크게 조절 */
+}
+
+.category-right a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+#category-sum {
+    margin-right: 60px;
+    margin-left: 20px;
+}
+
+.category-right #category-right_women {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+#category ul {
+    margin-left: 855px;
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+#category ul li {
+    margin-right: 5px;
+    font-size: larger;
+    transition: color 0.1s;
+}
+
+#category a {
+    text-decoration: none;
+    color: gray;
+}
+
+#category a:hover {
+    color: black;
+}
+
 /* 페이지 컨테이너 스타일 */
 .page-container {
     width: 80%;
@@ -96,8 +180,8 @@ header .inner1 {
 
 /* 각 구역 스타일 */
 .section {
-    margin-top:150px;
-    margin-bottom:150px; /* 구역 간격 설정 */
+    margin-top: 150px;
+    margin-bottom: 150px; /* 구역 간격 설정 */
 }
 
 /* 추천 상품 제목 스타일 */
@@ -155,13 +239,11 @@ header .inner1 {
     color: inherit; /* 부모 요소의 글자색을 상속받음 (검은색으로 설정) */
 }
 
- 
 footer {
     background-color: #333;
     color: #fff;
     padding: 30px 0;
-    margin-top: 0%; 
-    
+    margin-top: 0%;
 }
 
 footer .inner {
@@ -187,14 +269,6 @@ footer ul li {
 
 footer p {
     margin-top: 20px;
-}
-section {
-    width: 80%; /* 원하는 크기로 조절합니다. */
-    margin: 0 auto;
-    margin-top: 0px;
-    display: flex;
-    justify-content: center; /* 테이블을 수평으로 중앙에 모으도록 설정합니다. */
-            
 }
 
 /* "chart-table" 클래스에 대한 테이블 스타일 추가 또는 수정 */
@@ -251,4 +325,14 @@ section {
     background-color: #f5f5f5;
     transition: background-color 0.2s;
     border-radius: 8px;
+}
+
+img {
+    max-width: 50%;
+}
+
+#lowb1 {
+    margin-left: 300px;
+    margin-right: 100px;
+        
 }

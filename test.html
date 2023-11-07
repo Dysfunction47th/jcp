@@ -1,39 +1,41 @@
-<script>
-var CLIENT_ID = "wSKYIe_Ig7zSDiLcY5nz"
-var CLIENT_SECRET = "FpsFhML030"
-
-var request = require('request');
-
-var client_id = 'YOUR_CLIENT_ID';
-var client_secret = 'YOUR_CLIENT_SECRET';
-
-var api_url = 'https://openapi.naver.com/v1/datalab/shopping/categories';
-var request_body = {
-    "startDate": "2017-08-01",
-    "endDate": "2017-09-30",
-    "timeUnit": "month",
-    "category": [
-        {"name": "패션의류", "param": ["50000000"]},
-        {"name": "화장품/미용", "param": ["50000002"]}
-    ],
-    "device": "pc",
-    "ages": ["20", "30"],
-    "gender": "f"
-};
-
-request.post({
-        url: api_url,
-        body: JSON.stringify(request_body),
-        headers: {
-            'X-Naver-Client-Id': client_id,
-            'X-Naver-Client-Secret': client_secret,
-            'Content-Type': 'application/json'
-        }
-    },
-    function (error, response, body) {
-        console.log(response.statusCode);
-        console.log(body);
-    });
-
-
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Musinsa newsroom</title>
+</head>
+<body>
+  <header>
+    <h1>Musinsa newsroom</h1>
+    <p>2023.11.02</p>
+  </header>
+  <main>
+    <section class="category">
+      <h1>Category</h1>
+      <ul class="category-list">
+        <li class="category-item">
+          <a href="#">
+            <img src="https://example.com/images/category-1.jpg" alt="Category 1">
+            <h2>Category 1</h2>
+          </a>
+        </li>
+        <li class="category-item">
+          <a href="#">
+            <img src="https://example.com/images/category-2.jpg" alt="Category 2">
+            <h2>Category 2</h2>
+          </a>
+        </li>
+        <li class="category-item">
+          <a href="#">
+            <img src="https://example.com/images/category-3.jpg" alt="Category 3">
+            <h2>Category 3</h2>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>Copyright 2023 Musinsa</p>
+  </footer>
+</body>
+</html>

@@ -1,7 +1,7 @@
 
 
 function mainMove() {
-    window.location.href = "mainpage.html";
+    window.location.href = "trendPage_login_complete.html";
     
 }
 

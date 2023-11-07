@@ -16,5 +16,5 @@ function logout() {
     
     
     sessionStorage.clear()
-    location.href = "loginPage.html";
+    location.href = "trendPage.html";
   }
