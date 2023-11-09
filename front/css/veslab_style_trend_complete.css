@@ -94,49 +94,64 @@ header .inner1 {
 }
 
 /* show_site style */
+#show_site {
+    width: 80%;
+    background-color: white; /* 무신사 트랜드 타이틀의 배경색을 검은색으로 설정 */
+    text-align: center; /* 가운데 정렬 */
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 #show_site h2 {
+    
     font-size: 36px;
-    color: #fff;
+    margin: 0 auto;
     color: #333;
     text-align: center;
 }
 
-/* categori */
-#category #cate_color{
-    background-color:#b0b7be;
-    color: black;
+#category {
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 80%;
+    background-color: #333; /* 검은색 배경 */
+    color: white; /* 텍스트 색상을 흰색으로 설정 */
+    min-height: 150px; /* 최소 높이를 100px로 설정 */
+    max-height: 500px; /* 최대 높이를 300px로 설정 */
+    border-radius: 15px; /* 모서리를 15px로 둥글게 설정 */
+}
+
+#category #cate_color {
+    background-color: #b0b7be;
+    color: white;
 }
 
 #cate_color {
-    background-color:#1181ff /* 원하는 색상을 여기에 입력하세요 */
+    background-color: #1181ff; /* 원하는 색상을 여기에 입력하세요 */
 }
 
 #category h1 {
-    margin-left: 500px;
+    margin-left: 42%;
     font-size: 28px;
     margin-top: 20px;
 }
 
-.category-left {
-    margin-left: -400px;
-    margin-right: 80px;
-}
 
 .category-left a {
     margin-left: 50px;
     text-decoration: none;
-    color: black;
+    color: white; /* 링크 텍스트 색상을 흰색으로 설정 */
 }
 
 .category-right {
-    margin-left: 50px;
+    margin-left: -400px;
     margin-right: 120px; /* 여성과 남성 간의 간격을 더 크게 조절 */
 }
 
 .category-right a {
     margin-right: 20px;
     text-decoration: none;
-    color: black;
+    color: white; /* 링크 텍스트 색상을 흰색으로 설정 */
 }
 
 #category-sum {
@@ -157,19 +172,21 @@ header .inner1 {
 }
 
 #category ul li {
-    margin-right: 5px;
+    margin-right: 0px;
     font-size: larger;
     transition: color 0.1s;
 }
 
 #category a {
     text-decoration: none;
-    color: gray;
+    color: white;
 }
 
 #category a:hover {
-    color: black;
+    color: white; /* 링크에 호버 효과 시 텍스트 색상을 흰색으로 변경 */
 }
+
+
 
 /* 페이지 컨테이너 스타일 */
 .page-container {
@@ -240,10 +257,13 @@ header .inner1 {
 }
 
 footer {
+    margin: 0 auto;
+    width: 80%;
     background-color: #333;
     color: #fff;
     padding: 30px 0;
     margin-top: 0%;
+    border-radius: 15px; /* 모서리를 15px로 둥글게 설정 */
 }
 
 footer .inner {
@@ -271,7 +291,6 @@ footer p {
     margin-top: 20px;
 }
 
-/* "chart-table" 클래스에 대한 테이블 스타일 추가 또는 수정 */
 .chart-table {
     width: 80%;
     border-collapse: collapse;
@@ -328,7 +347,7 @@ footer p {
 }
 
 img {
-    max-width: 50%;
+    max-width: 80%;
 }
 
 #lowb1 {

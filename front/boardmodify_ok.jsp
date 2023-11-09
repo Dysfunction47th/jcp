@@ -20,7 +20,7 @@ today += Integer.toString(dateIn.get(Calendar.DATE)) + " ";
 today += Integer.toString(dateIn.get(Calendar.HOUR_OF_DAY)) + ":";
 today += Integer.toString(dateIn.get(Calendar.MINUTE));
 
-String sql="update boarda set title= ?, contents=?, updatedtm=? where num=?";
+String sql="update boardb set title= ?, contents=?, updatedtm=? where num=?";
 pstmt = conn.prepareStatement(sql);
 pstmt.setString(1, title);
 pstmt.setString(2, contents);

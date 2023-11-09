@@ -1,21 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.sql.*, java.util.*"%>
+    pageEncoding="UTF-8" import="java.util.*, java.sql.*"%>
     <%request.setCharacterEncoding("utf-8"); %>
-
+    
 
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Main Page</title>
+    <title> trend Page</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="./css/veslab_style_board.css">
+    <link rel="stylesheet" href="./css/veslab_style_trend_complete.css">
     <script src="../back/LoginAndLogout/logout.js"></script>
 
 </head>
@@ -55,7 +54,9 @@ window.onload = function () {
 
 <body>
 
-  <header id="bener1">
+    
+
+    <header id="bener1">
         <div class="inner1">
             <h1>musinsa top10</h1>
             
@@ -69,10 +70,14 @@ window.onload = function () {
 
                 
     </header>
- 
+
+    <div id="show_site">
+        <h2> 무신사 트랜드  </h2>
+    </div>
+  
     <div id="category">
     <br>
-        <h1> 무신사 여성 베스트 </h1>
+        <h1> 무신사 전체 베스트 </h1>
         <ul>
         	<li class="category-right">
                 <a href="./trendPage_login_complete.jsp	" id="category-sum"> 전체 </a>
@@ -84,64 +89,97 @@ window.onload = function () {
             </li>
         </ul>
     </div>
-  
-
-  
- 
-
-
+    
 <section>
-<h3>게시판 새글쓰기</h3>
-   <script>
-function valid_check(){
-	if (document.form1.writer.value==""){
-		alert("작성자 이름을 입력하세요!!");
-		document.form1.writer.focus();
-		return false;
-	}
-	if (document.form1.title.value==""){
-		alert("제목을 입력하세요!!");
-		document.form1.title.focus();
-		return false;
-	}
-	if (document.form1.contents.value==""){
-		alert("제목을 입력하세요!!");
-		document.form1.contents.focus();
-		return false;
-	}
-	document.form1.submit();
-}
-</script>
-<form name="form1" action="boardwrite_ok.jsp" method="post">
-<table width="500" border="1" cellpadding="0" cellspacing="0">
-<tr>
-<td width="40%">작성자명</td>
-<td width="60%"><input type="text" name="writer" class="paging2"></td>
-</tr>
-<tr>
-<td width="40%">제목</td>
-<td width="60%"><input type="text" name="title" class="paging2"></td>
-</tr>
-<tr>
-<td width="40%" class="paging3">내용</td>
-<td width="60%">
-<textarea name="contents" rows="25" cols="60">
-</textarea>
-</td>
-</tr>
-<tr>
-<td colspan="2">
-<input type="button" value="등록" class="paging4" onclick="valid_check();">
-<input type="button" value="취소"class ="paging4">
-<input type="button" value="목록으로" class="paging4" onclick="submit_list();">
+    
+    <table class="chart-table"> <!-- 인기 순위 차트 테이블에 'chart-table' 클래스를 추가합니다. -->
+        <caption>주간 인기상품</caption>
+        <tr>
+            <th>순위</th>
+            <th>상품</th>
+            <th>순위</th>
+            <th>상품</th>
+            <th>순위</th>
+            <th>상품</th>
+            <th>순위</th>
+            <th>상품</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><img src="../asset/sumweek/1.jpg"><br><a href="https://www.musinsa.com/app/goods/3633441?loc=goods_rank">아식스 X 언어펙티드 젤-카야노 14 - 브라이트 화이트:제트 블랙 </a><br><a> 229,900원</a></td>
+    
+            <td>2</td>
+            <td><img src="../asset/sumweek/2.jpg"><br><a href="https://www.musinsa.com/app/goods/3646678?loc=goods_rank">Traum Balmacaan Long Coat [Black]</a><br><a> 439,000원</a></td>
+        
+            <td>3</td>
+            <td><img src="../asset/sumweek/3.jpg"><br><a href="https://www.musinsa.com/app/goods/1551840?loc=goods_rank"> Deep One Tuck Sweat Pants [Grey]</a><br><a> 39,000원</a></td>
+        
+            <td>4</td>
+            <td><img src="../asset/sumweek/4.jpg"><br><a href="https://www.musinsa.com/app/goods/2545799?loc=goods_rank">슈퍼스타 82 - 블랙 / GY3428</a><br><a> 149,000원</a></td>
+        </tr>
 
-</table>
-</form>
-       </section>
+        <tr>
+            <td>5</td>
+            <td><img src="../asset/sumweek/5.jpg"><br><a href="https://www.musinsa.com/app/goods/3290281?loc=goods_rank">버뮤다 - 핑크 / GY7386 </a><br><a> 139,000원</a></td>
+        
+            <td>6</td>
+            <td><img src="../asset/sumweek/6.jpg"><br><a href="https://www.musinsa.com/app/goods/2037173?loc=goods_rank"> 베이직 푸퍼_SPJPD4TC11 </a><br><a> 69,900원</a></td>
+        
+            <td>7</td>
+            <td><img src="../asset/sumweek/7.jpg"><br><a href="https://www.musinsa.com/app/goods/1778404?loc=goods_rank"> 2WAY 스웻 후드 집업 (MELANGE GREY)  </a><br><a> 45,000원</a></td>
+        
+            <td>8</td>
+            <td><img src="../asset/sumweek/8.jpg"><br><a href="https://www.musinsa.com/app/goods/1149329?loc=goods_rank">세미 와이드 히든 밴딩 슬랙스 [블랙] </a><br><a> 39,900원</a></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td><img src="../asset/sumweek/9.jpg"><a href="https://www.musinsa.com/app/goods/2700048?loc=goods_rank">우먼즈 캐시미어 블렌드 발마칸 로브 코트 [블랙] </a><br><a> 209,900원</a></td>
+            <td>10</td>
+            <td><img src="../asset/sumweek/10.jpg"><br><a href="https://www.musinsa.com/app/goods/2112059?loc=goods_rank"> 원턱 와이드 스웨트팬츠 그레이 </a><br><a> 52,000원</a></td>
+        
+            <td>11</td>
+            <td><img src="../asset/sumweek/11.jpg"><br><a href="https://www.musinsa.com/app/goods/3585225?loc=goods_rank"> (덕 다운) 코듀로이 헤링턴 다운 점퍼  </a><br><a> 169,000원</a></td>
+        
+            <td>12</td>
+            <td><img src="../asset/sumweek/12.jpg"><br><a href="https://www.musinsa.com/app/goods/2684073?loc=goods_rank"> 와이드 히든 밴딩 슬랙스 [블랙]  </a><br><a> 249,000원</a></td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td><img src="../asset/sumweek/13.jpg"><br><a href="https://www.musinsa.com/app/goods/2112059?loc=goods_rank"> SKADI DUCK DOWN - GLOSSY BLACK </a><br><a> 52,000원</a></td>
+        
+            <td>14</td>
+            <td><img src="../asset/sumweek/14.jpg"><br><a href="https://www.musinsa.com/app/goods/1576700"> 오버핏 비건레더 싱글 자켓 </a><br><a> 129,000원</a></td>
+        
+            <td>15</td>
+            <td><img src="../asset/sumweek/15.jpg"><br><a href="https://www.musinsa.com/app/goods/2723767?loc=goods_rank">   데일리 라운드 니트 - 8 COLOR  </a><br><a> 59,000원</a></td>
+        
+            <td>16</td>
+            <td><img src="../asset/sumweek/16.jpg"><br><a href="https://www.musinsa.com/app/goods/2704962?loc=goods_rank">WARM+ UP QUILTING JACKET BLACK  </a><br><a> 99,900원</a></td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td><img src="../asset/sumweek/17.jpg"><br><a href="https://www.musinsa.com/app/goods/2116411?loc=goods_rank"> 캐시미어 블렌드 오버사이즈 발마칸 코트 [블랙] </a><br><a> 199,900원</a></td>
+        
+            <td>18</td>
+            <td><img src="../asset/sumweek/18.jpg"><br><a href="https://www.musinsa.com/app/goods/2252756?loc=goods_rank">  NBPDDB736G / ML725P (GRAY) </a><br><a> 129,900원</a></td>
+        
+            <td>19</td>
+            <td><img src="../asset/sumweek/19.jpg"><br><a href="https://www.musinsa.com/app/goods/2092852?loc=goods_rank">이지 와이드 데님 팬츠 그레이  </a><br><a> 52,800원</a></td>
+        
+            <td>20</td>
+            <td><img src="../asset/sumweek/20.jpg"><br><a href="https://www.musinsa.com/app/goods/1551839?loc=goods_rank"> Deep One Tuck Sweat Pants [Black]  </a><br><a> 39,000원</a></td>
+        </tr>
+        
+    </table>
+    <div id="low">
+        <img id="lowb1"  src="../asset/lowbener/1.png" alt="" srcset="">
+        <img id="lowb2" src="../asset/lowbener/2.png" alt="" srcset="">
+    </div>
+	
+    </section>
 
-<br>
 
-   <footer>
+    <footer>
         <div class="inner">
             <div class="upper">
                 <h1>VESLAB</h1>
@@ -168,9 +206,13 @@ function valid_check(){
 
 
 
+
 </body>
 
 </html>
+
+
+
 
 <script>
     const listItems = document.querySelectorAll("#category li");
@@ -278,5 +320,3 @@ function valid_check(){
         }
     </script>
     
-    
-

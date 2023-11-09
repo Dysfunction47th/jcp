@@ -1,21 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.sql.*, java.util.*"%>
+    pageEncoding="UTF-8" import="java.util.*, java.sql.*"%>
     <%request.setCharacterEncoding("utf-8"); %>
-
-
-
+    
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Main Page</title>
+    <title> trend Page</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="./css/veslab_style_board.css">
+    <link rel="stylesheet" href="./css/veslab_style_trend_complete.css">
     <script src="../back/LoginAndLogout/logout.js"></script>
 
 </head>
@@ -55,7 +52,9 @@ window.onload = function () {
 
 <body>
 
-  <header id="bener1">
+    
+
+    <header id="bener1">
         <div class="inner1">
             <h1>musinsa top10</h1>
             
@@ -69,7 +68,11 @@ window.onload = function () {
 
                 
     </header>
- 
+
+    <div id="show_site">
+        <h2> 무신사 트랜드  </h2>
+    </div>
+  
     <div id="category">
     <br>
         <h1> 무신사 여성 베스트 </h1>
@@ -84,64 +87,85 @@ window.onload = function () {
             </li>
         </ul>
     </div>
-  
-
-  
- 
-
-
+    
 <section>
-<h3>게시판 새글쓰기</h3>
-   <script>
-function valid_check(){
-	if (document.form1.writer.value==""){
-		alert("작성자 이름을 입력하세요!!");
-		document.form1.writer.focus();
-		return false;
-	}
-	if (document.form1.title.value==""){
-		alert("제목을 입력하세요!!");
-		document.form1.title.focus();
-		return false;
-	}
-	if (document.form1.contents.value==""){
-		alert("제목을 입력하세요!!");
-		document.form1.contents.focus();
-		return false;
-	}
-	document.form1.submit();
-}
-</script>
-<form name="form1" action="boardwrite_ok.jsp" method="post">
-<table width="500" border="1" cellpadding="0" cellspacing="0">
-<tr>
-<td width="40%">작성자명</td>
-<td width="60%"><input type="text" name="writer" class="paging2"></td>
-</tr>
-<tr>
-<td width="40%">제목</td>
-<td width="60%"><input type="text" name="title" class="paging2"></td>
-</tr>
-<tr>
-<td width="40%" class="paging3">내용</td>
-<td width="60%">
-<textarea name="contents" rows="25" cols="60">
-</textarea>
-</td>
-</tr>
-<tr>
-<td colspan="2">
-<input type="button" value="등록" class="paging4" onclick="valid_check();">
-<input type="button" value="취소"class ="paging4">
-<input type="button" value="목록으로" class="paging4" onclick="submit_list();">
+    
+    <table class="chart-table">
+            <caption>이달 인기상품</caption>
+            <tr>
+                <th>순위</th>
+                <th>상품</th>
+                <th>순위</th>
+                <th>상품</th>
+                <th>순위</th>
+                <th>상품</th>
+                <th>순위</th>
+                <th>상품</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td> <img src="../asset/wsum/1.jpg" alt="" srcset=""> <br> <a href="https://www.musinsa.com/app/goods/3290281?loc=goods_rank">버뮤다 - 핑크 / GY7386</a> <br> <a> 139,000원</a></td>
+                <td>2</td>
+                <td><img src="../asset/wsum/2.jpg" alt="" srcset=""> <br><a href="https://www.musinsa.com/app/goods/1551840?loc=goods_rank">DTraum Balmacaan Long Coat [Black]</a><br> <a> 439,000원</a></td>
+                <td>3</td>
+                <td> <img src="../asset/wsum/3.jpg" alt="" srcset=""> <br> <a href="https://www.musinsa.com/app/goods/3364208?loc=goods_rank"> 가젤 인도어 - 블랙:화이트 / H06259 </a> <br><a> 159,000원</a></td>
+                <td>4</td>
+                <td><img src="../asset/wsum/4.jpg"><br><a href="https://www.musinsa.com/app/goods/3434621?loc=goods_rank"> GNRL 에센셜 가디건 [GREY] / WBC3L0450</a><br><a> 85,000원</a></td>
+            </tr>
+            
+            <tr>
+                <td>5</td>
+                <td><img src="../asset/wsum/5.jpg"><br><a href="https://www.musinsa.com/app/goods/3471299?loc=goods_rank"> SWEATSHIRT FLOWERMARDI_BLACK PINK</a><br><a>  139,000원</a></td>
+                <td>6</td><br>
+                <td><img src="../asset/wsum/6.jpg"><br><a href="https://www.musinsa.com/app/goods/3290282?loc=goods_rank">버뮤다 - 크림 / GY7388</a><br><a> 45,000원</a></td>
+                <td>7</td><br>
+                <td><img src="../asset/wsum/7.jpg"><br><a href="https://musinsa.com/app/goods/3621227?loc=goods_rank">[세임디퍼런스 콜라보]하이넥 스트링 퀄팅 점퍼_Ivory</a><br><a> 124,000원</a></td>
+                <td>8</td><br>
+                <td><img src="../asset/wsum/8.jpg"><br><a href="https://www.musinsa.com/app/goods/3543294?loc=goods_rank"> 삼바 Decon IF0641</a><br><a> 179,000원</a></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><img src="../asset/wsum/9.jpg"><br><a href="https://www.musinsa.com/app/goods/3434619?loc=goods_rank"> GNRL 에센셜 가디건 [BLACK] / WBC3L04503 </a><br><a>85,000원</a></td>
+                <td>10</td>
+                <td><img src="../asset/wsum/10.jpg"><br><a href="https://www.musinsa.com/app/goods/3543293?loc=goods_rank"> 삼바 Decon IF0642</a><br><a>  179,000원</a></td>
+                <td>11</td>
+                <td><img src="../asset/wsum/11.jpg"><br><a href="https://www.musinsa.com/app/goods/3624227?loc=goods_rank">[X GLOWNY] BRYN VELCRO SNEAKERS with LONY - IVORY</a><br><a>  208,000원</a></td>
+                <td>12</td>
+                <td><img src="../asset/wsum/12.jpg"><br><a href="https://www.musinsa.com/app/goods/3443300?loc=goods_rank"> 트레이닝 핀턱 와이드 팬츠 3colors</a><br><a>  66,400원</a></td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td><img src="../asset/wsum/13.jpg"><br><a href="https://www.musinsa.com/app/goods/3536576?loc=goods_rank">CLOUDY FLATFORM FUR SLINGBACK - 5color</a><br><a>  94,000원</a></td>
+                <td>14</td>
+                <td><img src="../asset/wsum/14.jpg"><br><a href="https://www.musinsa.com/app/goods/3563039?loc=goods_rank"> NBNPD42903 / UNI 액티브 라이트 경량 구스다운 (CREAM)</a><br><a> 52,800원</a></td>
+                <td>15</td>
+                <td><img src="../asset/wsum/15.jpg"><br><a href="https://www.musinsa.com/app/goods/3621206?loc=goods_rank"> [세임디퍼런스 콜라보]울 시어링 칼라 숏 코트_Oatmeal</a><br><a> 가  187,000원</a></td>
+                <td>16</td>
+                <td><img src="../asset/wsum/16.jpg"><br><a href="https://www.musinsa.com/app/goods/3477691?loc=goods_rank">EMBROIDERY DAN COLLARLESS QUILTING FLEECE JACKET IVORY</a><br><a>  59,000원</a></td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td><img src="../asset/wsum/17.jpg"><br><a href="https://www.musinsa.com/app/goods/3463299?loc=goods_rank">2 TONE ARCH HOODIE BLACK</a><br><a> 79,000원</a></td>
+                <td>18</td>
+                <td><img src="../asset/wsum/18.jpg"><br><a href="https://www.musinsa.com/app/goods/2112061?loc=goods_rank"> 가젤 볼드 W - 베이지:그린 / ID7056 </a><br><a>139,000원</a></td>
+                <td>19</td>
+                <td><img src="../asset/wsum/19.jpg"><br><a href="https://www.musinsa.com/app/goods/3445872?loc=goods_rank"> APR8 STAR LOGO HOODIE [6Color]</a><br><a>  89,000원</a></td>
+                <td>20</td>
+                <td><img src="../asset/wsum/20.jpg"><br><a href="https://www.musinsa.com/app/goods/3595879?loc=goods_rank"> MATIN LOGO COATING DOWN JUMPER IN BLACK</a><br><a> 298,000원</a></td>
+            </tr>
+            </tr>
+            
+        </table>
+        </table>
+        <div id="low">
+            <img id="lowb1"  src="../asset/lowbener/1.png" alt="" srcset="">
+            <img id="lowb2" src="../asset/lowbener/2.png" alt="" srcset="">
+        </div>
+	
+    </section>
 
-</table>
-</form>
-       </section>
 
-<br>
-
-   <footer>
+    <footer>
         <div class="inner">
             <div class="upper">
                 <h1>VESLAB</h1>
@@ -171,6 +195,9 @@ function valid_check(){
 </body>
 
 </html>
+
+
+
 
 <script>
     const listItems = document.querySelectorAll("#category li");
@@ -278,5 +305,3 @@ function valid_check(){
         }
     </script>
     
-    
-

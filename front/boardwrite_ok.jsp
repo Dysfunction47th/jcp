@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.sql.*, java.util.*"%>
-<%@ page import="com.oreilly.servlet.MultipartRequest, com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
-    <%request.setCharacterEncoding("utf-8"); %>
-<%@ page import="javax.servlet.*, javax.servlet.http.*" %>
+<%@ page import=" jakarta.servlet.*, jakarta.servlet.http.*" %>
 <%
 //단계1
 Class.forName("com.mysql.jdbc.Driver");
@@ -16,14 +14,14 @@ ResultSet rs = null;
 	String writer = request.getParameter("writer");
 	String contents = request.getParameter("contents");
 	
-	String strSQL = "select ifnull(max(num),0)from boardB";
+	String strSQL = "select ifnull(max(num),0)from boardb";
 	pstmt = conn.prepareStatement(strSQL);
 	rs = pstmt.executeQuery();
 	rs.next();
 	
 	int maxnum = rs.getInt(1) + 1;
 	
-	strSQL ="INSERT INTO boardB(num,mgrp,mseq,mlvl,title,contents,writer,writedtm,updatedtm,readcnt) VALUES(?,?,?,?,?,?,?,?,?,?)";
+	strSQL ="INSERT INTO boardb(num,mgrp,mseq,mlvl,title,contents,writer,writedtm,updatedtm,readcnt) VALUES(?,?,?,?,?,?,?,?,?,?)";
 	pstmt = conn.prepareStatement(strSQL);
 	
 	Calendar dateIn = Calendar.getInstance();

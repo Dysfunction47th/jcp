@@ -13,8 +13,8 @@
     <title> Main Page</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="./css/boardPage.css">
-    <script src="/back/LoginAndLogout/logout.js"></script>
+    <link rel="stylesheet" href="./css/veslab_style_board.css">
+    <script src="../back/LoginAndLogout/logout.js"></script>
 
 </head>
 
@@ -98,75 +98,38 @@ if (in_search_value == null) in_search_value="";
 %>
 
   
-  <header>
-      <div class="inner">
-          <h1>CLOTHES SHOPPING Trend</h1>
-      
-          <ul id="gnb">
-              <li><a href="http://localhost:8080/JSP/jcp/front/trends.jsp">지금 트랜드</a></li>
-              <!-- <li><a href="#"  onclick="location.href='C:\jsp\test2\src\main\webapp\jcp\back\NaverShowppingLab.ShowTrendLab.jsp'">trend</a></li> -->
-              
-              <!-- <li><a href="#">쇼핑</a></li> -->
-              <li id="recommendBoard"><a href="boardPage.jsp">추천게시판</a></li>
-              
-          </ul>
+  <header id="bener1">
+        <div class="inner1">
+            <h1>musinsa top10</h1>
+            
+            <ul class="util">
+                
+                <li id="userMenu" > <img src="../asset/login/login_img.png" alt="" srcset=""> <a href="../front/loginPage.html" id="login_word">로그인 해주세요</a></li>
+                <li class="api-btn" onclick="logout()"><a href="#">Logout</a></li>
+                
+            </ul>
+        </div>
 
-          <ul class="util">
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Help</a></li>
-              <li id="userMenu"><a href="#">User Name</a></li>
-              <li class="api-btn" onclick="logout()"><a href="#">Logout</a></li>
-              <li><a href="#">Sitemap</a></li>
-          </ul>
-      </div>
-  </header>
+                
+    </header>
+
 
 
   
-  <div class="slider-container">
-      <div class="slider">
-          
-      </div>
-      <button class="prev-btn">&#10094;</button>
-      <button class="next-btn">&#10095;</button>
-  </div>
-  
-  <script>
-
-    const img = ["1.png", "4.png"];
-    let currentIndex = 0; // 현재 이미지 인덱스
-    
-    function updateSlider() {
-        // 다음 이미지 인덱스 계산
-        currentIndex = (currentIndex + 1) % img.length;
-    
-        // 현재 이미지 URL 가져오기
-        const currentImg = img[currentIndex];
-    
-        // 이미지 요소 업데이트
-        bgImage.src = "/asset/clothImg/" + currentImg;
-    }
-    
-    // 이미지 요소 생성
-    const bgImage = document.createElement("img");
-    
-    // 슬라이더 컨테이너 요소 가져오기
-    const sliderContainer = document.querySelector(".slider-container");
-    
-    // 슬라이더 요소 가져오기
-    const slider = sliderContainer.querySelector(".slider");
-    
-    // 이미지 요소를 슬라이더에 추가
-    slider.appendChild(bgImage);
-    
-    // 슬라이더 컨테이너에 슬라이더를 추가
-    document.body.appendChild(sliderContainer);
-    
-    // 2초마다 슬라이더 업데이트
-    setInterval(updateSlider, 2000);
-    
-    
-</script>
+    <div id="category">
+    <br>
+        <h1> 무신사 답변 베스트 </h1>
+        <ul>
+        	<li class="category-right">
+                <a href="./trendPage_login_complete.jsp	" id="category-sum"> 전체 </a>
+                <a href="./trendPage_login_complete_men.jsp" id="category-right_men"> 남성 </a>
+                <a href="./trendPage_login_complete_women.jsp" id="category-right_women"> 여성 </a>
+                <a href="./trendPage_login_complete_week.jsp" id="category-right_men"> 주간  </a>
+                <a href="./trendPage_login_complete.jsp" id="category-right_women"> 월간 </a>
+                <a href="./boardPage.jsp">추천게시판 </a>
+            </li>
+        </ul>
+    </div>
 
 <section>
 
@@ -195,9 +158,9 @@ if (in_search_value == null) in_search_value="";
 
 <tr>
 <td colspan = "2">
-<input type = "reset" value = "다시작성">&nbsp:&nbsp:&nbsp:
-<input type = "button" value = "등록" onclick ="vaild_check();">&nbsp:&nbsp:&nbsp:
-<input type = "button" value = "목록" onclick ="submit_check();" >&nbsp:&nbsp:&nbsp:
+<input type = "reset" class="paging4" value = "다시작성">
+<input type = "button" value = "등록" class="paging4" onclick ="vaild_check();">
+<input type = "button" value = "목록" class="paging4" onclick ="submit_check();">
 </td>
 </tr>
 </table>
@@ -211,6 +174,8 @@ out.print(e.getMessage());
 </section>
 
 
+    
+<br>
     <footer>
         <div class="inner">
             <div class="upper">
@@ -243,3 +208,109 @@ out.print(e.getMessage());
 </html>
 
 
+<script>
+    const listItems = document.querySelectorAll("#category li");
+    
+    listItems.forEach((li) => {
+        li.addEventListener("mouseover", () => {
+            // 마우스를 갖다 댔을 때 색상을 검은색으로 변경
+            li.style.color = "black";
+    
+            // 다른 li 요소는 회색으로 변경
+            listItems.forEach((otherLi) => {
+                if (otherLi !== li) {
+                    otherLi.style.color = "gray";
+                }
+            });
+        });
+    
+        li.addEventListener("mouseout", () => {
+            // 마우스가 벗어났을 때 원래 색상으로 복구
+            li.style.color = "";
+        });
+    
+        li.addEventListener("click", (event) => {
+            // 클릭한 li 요소의 링크 색상을 검은색으로 고정
+            li.style.color = "black";
+    
+            // 다른 li 요소는 이벤트 제거하여 검은색 고정을 해제
+            listItems.forEach((otherLi) => {
+                if (otherLi !== li) {
+                    otherLi.style.color = "gray";
+                    otherLi.removeEventListener("mouseover", () => {});
+                    otherLi.removeEventListener("mouseout", () => {});
+                }
+            });
+    
+            // 이벤트 전파 중단
+            event.stopPropagation();
+        });
+    });
+    </script>
+
+    <script>
+        // 페이지가 로드될 때 실행되는 함수
+        window.onload = function () {
+            const listItems = document.querySelectorAll("#category li");
+            const womenLink = document.querySelector("#category-sum");
+    
+            // 여성 링크 색상을 검은색으로 초기화
+            womenLink.style.color = "black";
+    
+            listItems.forEach((li) => {
+                // 마우스 오버 이벤트
+                li.addEventListener("mouseover", () => {
+                    if (li === womenLink) {
+                        li.style.color = "gray"; // 여성 링크인 경우 검은색으로 변경
+                    } else {
+                        li.style.color = "gray"; // 다른 링크는 회색으로 변경
+                    }
+                });
+    
+                // 마우스 아웃 이벤트
+                li.addEventListener("mouseout", () => {
+                    if (li === womenLink) {
+                        li.style.color = "gray"; // 여성 링크인 경우 검은색으로 유지
+                    } else {
+                        li.style.color = "gray"; // 다른 링크는 회색으로 변경
+                    }
+                });
+            });
+    
+            // 클릭 이벤트
+            womenLink.addEventListener("click", () => {
+                // 여성 링크를 클릭한 경우 다른 링크의 이벤트를 제거
+                listItems.forEach((otherLi) => {
+                    if (otherLi !== womenLink) {
+                        otherLi.style.color = "gray"; // 다른 링크는 회색으로 변경
+                        otherLi.removeEventListener("mouseover", () => {});
+                        otherLi.removeEventListener("mouseout", () => {});
+                    }
+                });
+            });
+        }
+    </script>
+
+    
+    <script>
+        // 페이지가 로드될 때 실행되는 함수
+        window.onload = function () {
+            const listItems = document.querySelectorAll(".category-left a");
+            
+            listItems.forEach((li) => {
+                // 클릭 이벤트
+                li.addEventListener("click", () => {
+                    // 클릭한 링크를 검은색으로 변경
+                    li.style.color = "#ece6cc";
+                    
+                    // 다른 링크를 회색으로 변경
+                    listItems.forEach((otherLi) => {
+                        if (otherLi !== li) {
+                            otherLi.style.color = "#f5f5dc";
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    
